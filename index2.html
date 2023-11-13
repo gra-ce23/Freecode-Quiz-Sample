@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="width=device-width, initial-scale=1.0">
+    <title>HTML/CSS Quiz</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <header>
+        <img id="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg" alt="">
+        <h1>HTML/CSS Quiz</h1>
+        <nav>
+            <ul>
+                <!--Finally, the navigation accessibility can be improved by providing keyboard shortcuts.The accesskey attribute accepts a space-separated list of access keys.-->
+                <li><a accesskey="s" href="#student-info">INFO</a></li>
+                <li><a accesskey="s" href="#html-questions">HTML</a></li>
+                <li><a accesskey="s" href="#css-questions">CSS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="https://freecodecamp.org/practice-project/accessibility-quiz" method="post">
+         <!--To increase the page accessibility, the role attribute can be used to indicate the purpose behind an element on the page to assistive technologies. The role attribute is a part of the Web Accessibility Initiative (WAI), and accepts preset values.-->   
+            <section role="region" aria-labelledby="student-info">
+                <h2 id="student-info">Info</h2>
+                <div class="info">
+                    <label for="student-name">Name: </label>
+                    <!--remove placeholder-->
+                    <input type="text" name="student-name" placeholder="e.g Grace Ola" id="student-name">
+                </div>
+                <div class="info">
+                    <label for="student-email">Email: </label>
+                    <input type="email" name="student-email" placeholder="Enter email" id="student-email">
+                </div>
+                <div class="info">
+                    <label for="birth-date"> D.O.B: <span class="sr-only">(Date of Birth)</span> </label>
+                    <input type="date" name="birth-date" id="birth-date">
+                </div>
+            </section>
+            <section role="region" aria-labelledby="html-questions">
+                <h2 id="html-questions">HTML</h2>
+                <div class="question-block">
+                    <p>1</p>
+                    <fieldset class="question" name="question">
+                        <!--The legend element represents a caption for the content of its parent fieldset element-->
+                        <legend>The legend element represents a caption for the content of its parent fieldset element</legend>
+                        <ul class="answers-list">
+                            <li>
+                                <label for="q1-a1">
+                                    <input type="radio" name="yes-no" value="true" id="q1-a1" required> True
+                                </label>
+                            </li>
+                            <li>
+                                <label for="q1-a2">
+                                    <input type="radio" name="yes-no" value="false" id="q1-a2" required> False
+                                </label>
+                            </li>
+                         </ul>
+                    </fieldset>
+                </div>
+                <div class="question-block">
+                    <p>2</p>
+                    <fieldset class="question" name="question">
+                        <!--A label element nesting an input element is required to have a for attribute with the same value as the input's id-->
+                        <legend>A label element nesting an input element is required to have a for attribute with the same value as the input's id</legend>
+                        <ul class="answers-list">
+                            <li>
+                                <label for="q2-a1">
+                                    <input type="radio" name="true-false" value="true" id="q2-a1" required> True
+                                </label>
+                            </li>
+                           <li>
+                            <label for="q2-a2">
+                                <input type="radio" name="true-false" value="false" id="q2-a2" required> False
+                            </label>
+                           </li>
+                        </ul>
+                    </fieldset>
+                </div>
+            </section>
+            <section role="region" aria-labelledby="css-questions">
+                <h2 id="css-questions">CSS</h2>
+                <div class="formrow">
+                    <div class="question-block">
+                      <label for="customer">Are you a frontend developer?</label>
+                    </div>
+                    <div class="answer">
+                      <select name="customer" id="customer" required>
+                        <option value="">Select an option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                      </select>
+                    </div>
+                    <div class="question-block">
+                      <label for="css-questions">Do you have any questions:</label>
+                    </div>
+                    <div class="answer">
+                      <textarea id="css-questionss" name="css-questions" rows="5" cols="24" placeholder="Who is flexbox..."></textarea>
+                    </div>
+                  </div>
+            </section>
+            <button type="submit">Send</button>
+        </form>
+    </main>
+    <footer>
+        <address>
+            <a href="https://freecodecamp.org">freeCodeCamp</a><br />
+            San Francisco<br />
+            California<br />
+            USA
+        </address>
+    </footer>
+
+</body>
+</html>
